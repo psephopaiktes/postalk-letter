@@ -1,7 +1,29 @@
 <!DOCTYPE html>
+<html lang="ja">
 <head>
-<title>Letter Front</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>LETTER</title>
+  <link rel="stylesheet" href="dist/letter.css">
 </head>
 <body>
-<p><%= @letter.message %></p>
+
+  <main id="letter" class="front">
+
+    <div class="left">
+    </div>
+
+    <div class="right">
+      <p class="s-zip"><%= @letter.sender_postal_code[0,3] %><span></span><%= @letter.sender_postal_code[3,4] %></p>
+      <p class="s-add"><%= @letter.sender_address %></p>
+      <p class="s-name"><%= @letter.sender_name %><span>行</span></p>
+      <p class="r-zip"><%= @letter.receiver_postal_code[0,3] %><span></span><%= @letter.receiver_postal_code[3,4] %></p>
+      <p class="r-add"><%= @letter.receiver_address %></p>
+      <p class="r-name"><%= @letter.receiver_name %></p>
+    </div>
+
+  </main>
+
 </body>
+</html>
