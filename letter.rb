@@ -6,7 +6,7 @@ end
 
 get '/letter_front' do
   @letter = Letter.new
-  @letter.message = params['message'].split("\n")
+  @letter.message = params['message'].split("\\n")
   @letter.receiver_postal_code = params['receiver_postal_code']
   @letter.receiver_name = params['receiver_name']
   @letter.receiver_address = params['receiver_address']
@@ -18,7 +18,7 @@ end
 
 get '/letter_back' do
   @letter = Letter.new
-  @letter.message = params['message'].split("\n")
+  @letter.message = params['message'].split("\\n")
   @letter.receiver_postal_code = params['receiver_postal_code']
   @letter.receiver_name = params['receiver_name']
   @letter.receiver_address = params['receiver_address']
